@@ -1,6 +1,3 @@
-#Things to fix
-# the hit or stay loop
-
 class Card
 attr_accessor :suit, :value
 
@@ -170,8 +167,10 @@ class Blackjack
     puts "**** Welcome to Sarah's Casino - Blackjack Game ****"
     puts "Enter (p) to play Blackjack or (e) to exit the game"
     input = gets.chomp
-    # until ["p", "e"].include?(input) == false
-    #   puts "Please enter 'p' to play or 'e' to exit"
+    until ["p", "e"].include?(input)
+      puts "Please enter 'p' to play or 'e' to exit"
+      input = gets.chomp
+    end
     if input == "e"
       exit
     else
@@ -181,6 +180,7 @@ class Blackjack
       puts "Welcome #{@player.name}, let's play Blackjack!"
       puts "----------------"
     end
+    return input
   end
 
   def card_comparison
@@ -191,28 +191,22 @@ class Blackjack
     end
   end
 
-  def end_game
-    puts "press any key to go back to the menu"
-    gets
-    self.menu
-  end
-
 
   def run_game
     @player.show_hand
     @dealer.show_hand
     @player.play
     @player.result
-    @dealer.play
+    @dealer.play 
     self.card_comparison
-    # self.end_game
   end
 
 end
 
 game = Blackjack.new
-game.menu
-game.run_game
+  game.menu
+  game.run_game
+
 
 
 
