@@ -1,0 +1,32 @@
+1. 
+@a is a class variable, and is a Fixnum object with value 2
+user is a new instance of the User Class
+user.name returns the accessor Class variable "name" for the instance user of the User Class
+user.name = "Joe" sets the Class variable "name" as "Joe" for the instance user of the User Class
+
+2. A module can be mixed in a class by adding
+ include Module after the name of the class
+ ex:
+ class Hello #hello being the name of the classs
+  Include Speak #Speak being a module we want to mixin the class
+
+3. A class variable is shared among all the instances of a class. If a class variable is a fixnum set to 2, this variable will be equal to 2 in all the instances of this class.
+On the other hand, an instance variable can have a different value in the different instances of the class.
+
+4. attr_accessor is both a getter and a setter method for the instance variable for which it is defined. 
+
+5. Dog.some_method calls the class method "some_method" on the class Dog.
+
+6. subclassing references a "is a" relationship between 2 classes whereas mixing in references a "has a" relationship between a class and a module.
+Subclassing is a relationship between 2 classes where a class A inherits from a class B (class A "is a" class B). Mixing in is a relationship between a class and a module, where a class includes the methods/behaviors defined in a module.
+
+7. Class User
+    def initialize(name)
+    @name = name
+    end
+  end
+
+8. yes, by using self.method
+
+9. binding pry
+
